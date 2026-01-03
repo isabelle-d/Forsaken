@@ -2017,7 +2017,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3765245384827406080}
-  - component: {fileID: 6416754279852541033}
+  - component: {fileID: 8695442161489061750}
   m_Layer: 8
   m_Name: Shoot Point
   m_TagString: Untagged
@@ -2040,7 +2040,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3316902701067429224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6416754279852541033
+--- !u!114 &8695442161489061750
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

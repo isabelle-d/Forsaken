@@ -8,6 +8,17 @@ public class Bullet : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    public void Initialize(Vector2 direction, float speed)
+    {
+        rb = GetComponent<Rigidbody2D>();
+        
+        rb.linearVelocity = direction * speed;
+
+        // Rotate the bullet to face the direction
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
