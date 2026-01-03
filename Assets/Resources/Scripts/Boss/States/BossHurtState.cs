@@ -9,7 +9,7 @@ public class BossHurtState : State
     public override void EnterState()
     {
         bossContext.HurtFinished = 0;
-        bossContext.Anim.SetBool("isHurt", true);
+        bossContext.Anim.Play("Hurt");
         bossContext.AppliedMovementX = 0f;
         bossContext.AppliedMovementY = 0f;
     }
@@ -20,12 +20,10 @@ public class BossHurtState : State
     public override void ExitState()
     {
         bossContext.IsHurt = false;
-        bossContext.Anim.SetBool("isHurt", false);
     }
 
     public override void CheckSwitchStates()
-    {
-        if (bossContext.HurtFinished == 1)
+    {   if (bossContext.HurtFinished == 1)
         {
             SwitchState(new BossIdleState(bossContext));
         }

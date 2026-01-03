@@ -8,7 +8,7 @@ public class BossWalkState : State
     }
     public override void EnterState()
     {
-        bossContext.Anim.SetBool("isWalking", true);
+        bossContext.Anim.Play("Walk");
         
     }
     public override void UpdateState()
@@ -22,7 +22,6 @@ public class BossWalkState : State
     }
     public override void ExitState()
     {
-        bossContext.Anim.SetBool("isWalking", false);
     }
 
     public override void CheckSwitchStates()

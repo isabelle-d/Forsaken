@@ -5,6 +5,7 @@ public class PlayerHurtState : State
     public PlayerHurtState(PlayerStateMachine currentContext) : base(currentContext)
     {
         playerContext = currentContext;
+        isBaseState = true;
     }
     public override void EnterState()
     {

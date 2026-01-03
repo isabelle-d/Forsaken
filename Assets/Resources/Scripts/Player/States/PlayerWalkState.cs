@@ -6,6 +6,7 @@ public class PlayerWalkState : State
     public PlayerWalkState(PlayerStateMachine currentContext) : base(currentContext)
     {
         playerContext = currentContext;
+        isBaseState = true;
     }
     public override void EnterState()
     {

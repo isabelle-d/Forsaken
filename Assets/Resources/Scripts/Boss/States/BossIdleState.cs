@@ -6,10 +6,11 @@ public class BossIdleState : State
     public BossIdleState(BossStateMachine currentContext) : base(currentContext)
     {
         bossContext = currentContext;
+        isBaseState = true;
     }
     public override void EnterState()
     {
-        bossContext.Anim.SetBool("isIdle", true);
+        bossContext.Anim.Play("Idle");
         bossContext.AppliedMovementX = 0f;
         bossContext.AppliedMovementY = 0f;
         curTime = 0f;
@@ -21,21 +22,23 @@ public class BossIdleState : State
     }
     public override void ExitState()
     {
-        bossContext.Anim.SetBool("isIdle", false);
     }
 
     public override void CheckSwitchStates()
     {
-        if (bossContext.IsHurt)
+        if (curTime > bossContext.TimeInIdle)
         {
-            SwitchState(new BossHurtState(bossContext));
-        }
-        else if (curTime > bossContext.TimeInIdle && bossContext.InRange())
-        {
-            SwitchState(new BossAttackState(bossContext));
-        } else if (curTime > bossContext.TimeInIdle)
-        {   
-            SwitchState(new BossWalkState(bossContext));
+            if (bossContext.CurrentStage == 1)
+            {
+                SwitchState(new StageOne(bossContext));
+            }
+            else if (bossContext.CurrentStage == 2)
+            {
+                SwitchState(new StageTwo(bossContext));
+            } else if (bossContext.CurrentStage == 3)
+            {
+                SwitchState(new StageThree(bossContext));
+            }
         } 
     }
 }

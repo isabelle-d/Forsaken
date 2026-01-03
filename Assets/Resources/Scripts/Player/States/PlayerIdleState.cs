@@ -6,6 +6,7 @@ public class PlayerIdleState : State
     public PlayerIdleState(PlayerStateMachine currentContext) : base(currentContext)
     {
         playerContext = currentContext;
+        isBaseState = true;
     }
     public override void EnterState()
     {

@@ -24,7 +24,7 @@ public abstract class StateMachine : MonoBehaviour
    
     public float AppliedMovementX {get {return appliedMovement.x;} set {appliedMovement.x = value;}}
     public float AppliedMovementY {get {return appliedMovement.y;} set {appliedMovement.y = value;}}
-    public float MoveSpeed {get {return moveSpeed;}}
+    public float MoveSpeed {get {return moveSpeed;} set {moveSpeed = value;}}
 
     public void Awake()
     {
@@ -52,7 +52,7 @@ public abstract class StateMachine : MonoBehaviour
 
     protected virtual void UpdateState()
     {
-        currentState.UpdateState();
+        currentState.UpdateStates();
         rb.linearVelocity = appliedMovement;
     }
 

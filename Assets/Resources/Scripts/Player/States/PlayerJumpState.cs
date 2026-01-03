@@ -6,6 +6,7 @@ public class PlayerJumpState : State
     public PlayerJumpState(PlayerStateMachine currentContext) : base(currentContext)
     {
         playerContext = currentContext;
+        isBaseState = true;
     }
     public override void EnterState()
     {

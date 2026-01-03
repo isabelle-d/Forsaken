@@ -11,7 +11,7 @@ public class BossAttackState : State
     public override void EnterState()
     {
         bossContext.AttackFinished = 0;
-        bossContext.Anim.SetBool("isAttacking", true);
+        bossContext.Anim.Play("Attack");
         bossContext.AppliedMovementX = 0f;
     }
     public override void UpdateState()
@@ -21,7 +21,6 @@ public class BossAttackState : State
     public override void ExitState()
     {
         bossContext.AttackFinished = 0;
-        bossContext.Anim.SetBool("isAttacking", false);
     }
 
     public override void CheckSwitchStates()
