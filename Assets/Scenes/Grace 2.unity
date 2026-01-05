@@ -686,7 +686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854882142318390965, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5854882142318390965, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: m_TagString
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 8722093030839065775}
   lineRenderer: {fileID: 0}
-  grappleSpeed: 5
+  grappleSpeed: 10
   stopDistance: 1.5
 --- !u!1001 &1546896670
 PrefabInstance:
@@ -1492,7 +1492,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: grappleSpeed
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: damageCooldown
@@ -1504,7 +1504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 721011383080934295, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: grappleDuration
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 730746689623877041, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: m_Layer
@@ -1824,7 +1824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854882142318390965, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5854882142318390965, guid: c811212f66276e745b7177f4664bef92, type: 3}
       propertyPath: m_TagString

@@ -26,15 +26,14 @@ public class BossIdleState : State
 
     public override void CheckSwitchStates()
     {
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            bossContext.IsGrappling = true;
-            SwitchState(new BossGrappleState(bossContext));
-        }
         if (curTime > bossContext.TimeInIdle)
         {
             if (bossContext.CurrentStage == 1)
             {
+                if (Random.value < 0.5f)
+                {
+                    bossContext.GrapplingFinished = 1;
+                }
                 SwitchState(new StageOne(bossContext));
             }
             else if (bossContext.CurrentStage == 2)

@@ -12,7 +12,7 @@ public class BossStateMachine : StateMachine, IDamageable
     private bool isFlipped = false;
     private bool isHurt = false; 
     private bool isTransitioning = false;
-    private bool isGrappling = false;
+    private int grapplingFinished = 0;
     private int attackFinished = 0;
     private int hurtFinished = 0;
     private int introFinished = 0;
@@ -22,7 +22,7 @@ public class BossStateMachine : StateMachine, IDamageable
 
     public bool IsHurt{get {return isHurt;} set {isHurt = value;}}
     public bool IsTransitioning {get {return isTransitioning;} set {isTransitioning = value;}}
-    public bool IsGrappling {get {return isGrappling;} set {isGrappling = value;}}
+    public int GrapplingFinished {get {return grapplingFinished;} set {grapplingFinished = value;}}
     public int AttackFinished {get {return attackFinished; } set {attackFinished = value;}}
     public int HurtFinished {get {return hurtFinished; } set {hurtFinished = value;}}
     public int IntroFinished {get {return introFinished; } set {introFinished = value;}}
