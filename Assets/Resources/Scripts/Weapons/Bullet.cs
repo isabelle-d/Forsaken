@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private float speed = 10f;
     [SerializeField] private int damage = 10;
     [SerializeField] private float lifetime = 5f;
 
@@ -17,16 +16,8 @@ public class Bullet : MonoBehaviour
         // Rotate the bullet to face the direction
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
-
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        if (rb != null)
-        {
-            rb.linearVelocity = transform.right * speed;
-        }
         Destroy(gameObject, lifetime);
+
     }
 
     void OnTriggerEnter2D(Collider2D other)

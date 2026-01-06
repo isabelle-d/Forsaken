@@ -35,7 +35,7 @@ public class PlayerRunState : State
         {
             SwitchState(new PlayerAttackState(playerContext));
         }
-        else if (playerContext.IsShootPressed)
+        else if (playerContext.IsShootPressed && playerContext.IsAimingForward)
         {
             SwitchState(new PlayerShootState(playerContext));
         } else if (playerContext.Grounded && playerContext.IsJumpPressed)
