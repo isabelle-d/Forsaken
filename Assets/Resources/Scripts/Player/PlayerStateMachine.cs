@@ -47,6 +47,12 @@ public class PlayerStateMachine : StateMachine, IDamageable
     public bool IsJumpPressed {get {return isJumpPressed;} set {isJumpPressed = value;}}
     public bool IsHitPressed {get {return isHitPressed;} set {isHitPressed = value;}}
     public bool IsShootPressed {get {return isShootPressed;} set {isShootPressed = value;}}
+    public bool IsAimingForward {get {
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float mouseDirX = mousePos.x - sprite.position.x;
+        float facing = Mathf.Sign(sprite.localScale.x);
+        return Mathf.Sign(mouseDirX) == facing;
+    }}
     public bool IsDashPressed {get {return isDashPressed;} set {isDashPressed = value;}}
     public bool IsHurt{get {return isHurt;} set {isHurt = value;}}
     public bool AttackFinished {get {return attackFinished; } set {attackFinished = value;}}

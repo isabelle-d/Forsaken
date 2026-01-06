@@ -15,17 +15,16 @@ public class Player_Ranged : Weapon
     {
         if (projectilePrefab == null || firePoint == null) return;
 
-        // Calculate direction based on the sprite's localScale
-        Transform sprite = weilder.Find("sprite");
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
 
-        float facing = Mathf.Sign(sprite.localScale.x); 
-        Vector2 shootDirection = new Vector2(facing, 0);
+        Vector2 shootDir = (mousePos - firePoint.position).normalized;
 
         GameObject bulletObj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         
         if (bulletObj.TryGetComponent(out Bullet bullet))
         {
-            bullet.Initialize(shootDirection, bulletSpeed);
+            bullet.Initialize(shootDir, bulletSpeed);
         }
     }
-    }
+}
