@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
+
 public class PlayerStateMachine : StateMachine, IDamageable
 {
     //control variables
@@ -11,6 +13,9 @@ public class PlayerStateMachine : StateMachine, IDamageable
 
     [Header("Object References")]
     [SerializeField] private GameManager manager;
+    [SerializeField] private TextMeshProUGUI healthBar;
+    [SerializeField] private TextMeshProUGUI dashBar;
+    [SerializeField] private GameObject shootIcon;
     private GameObject sword;
 
     //player input system
@@ -118,6 +123,8 @@ public class PlayerStateMachine : StateMachine, IDamageable
     {
         currentState = new PlayerIdleState(this);
         currentState.EnterState();
+        UpdateHealthText();
+        UpdateDashText();
     }
 
     protected override void UpdateState()
@@ -170,14 +177,17 @@ public class PlayerStateMachine : StateMachine, IDamageable
     void OnHit(InputAction.CallbackContext context)
     {
         isHitPressed = context.ReadValueAsButton();
+        UpdateDashText();
     }
     void OnShoot(InputAction.CallbackContext context)
     {
         isShootPressed = shootUnlocked && context.ReadValueAsButton();
+        UpdateDashText();
     }
     void OnDash(InputAction.CallbackContext context)
     {
         isDashPressed = context.ReadValueAsButton();
+        UpdateDashText();
         
     }
 
@@ -200,7 +210,7 @@ public class PlayerStateMachine : StateMachine, IDamageable
             Debug.Log("Health: " + Health);
             IsHurt = true;
         }
-
+        UpdateHealthText();
         if (Health <= 0f)
         {
             manager.CheckWinStatus();
@@ -270,11 +280,30 @@ public class PlayerStateMachine : StateMachine, IDamageable
         {
             shootUnlocked = true;
             Debug.Log("you can now shoot! click LMB to shoot at your mouse position");
+            shootIcon.SetActive(true);
         } else if (stage == 3)
         {
             dashUnlocked = true;
             Debug.Log("you can now shoot! click and drag RMB to launch yourself!");
+            dashBar.gameObject.SetActive(true);
         }
     }
+
+    void UpdateHealthText()
+    {
+        healthBar.text = "Health: " + Health.ToString();
+    }
+    void UpdateDashText()
+    {
+        dashBar.text = "Dash Meter: " + currentDashMeter.ToString();
+        if (currentDashMeter >= dashMeter)
+        {
+            dashBar.color = Color.green;
+        } else
+        {
+            dashBar.color = Color.black;
+        }
+    }
+
 
 }
