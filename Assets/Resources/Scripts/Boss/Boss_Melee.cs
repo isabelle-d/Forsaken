@@ -10,7 +10,6 @@ public class Boss_Melee : Weapon
     {   
         if (other.gameObject.tag.Equals("Player"))
         {
-            Debug.Log("taking damage");
             Attack(other.gameObject.GetComponent<IDamageable>());
         }
 

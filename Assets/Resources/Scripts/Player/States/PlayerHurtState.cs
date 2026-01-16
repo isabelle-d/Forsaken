@@ -9,10 +9,12 @@ public class PlayerHurtState : State
     }
     public override void EnterState()
     {
+        playerContext.NumHits = 0;
         playerContext.CanMove = false;
         playerContext.Anim.Play("Hurt");
         playerContext.AppliedMovementX = 0f;
         playerContext.AppliedMovementY = 0f;
+        playerContext.NumHits = 0;
     }
     public override void UpdateState()
     {

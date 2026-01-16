@@ -13,6 +13,7 @@ public class PlayerRunState : State
         playerContext.CanMove = true;
         playerContext.Anim.Play("Run");
         playerContext.AppliedMovementX = playerContext.CurrentMovementInput.x * playerContext.RunSpeed;
+        playerContext.NumHits = 0;
         
     }
     public override void UpdateState()

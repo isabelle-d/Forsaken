@@ -1,6 +1,5 @@
 public abstract class State 
 {  protected StateMachine context;
-
    protected bool isBaseState = false;
    protected State currentSubState;
    protected State currentSuperState;

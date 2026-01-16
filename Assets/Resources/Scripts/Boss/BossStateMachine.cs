@@ -96,7 +96,7 @@ public class BossStateMachine : StateMachine, IDamageable
             if (!player.gameObject.GetComponent<PlayerStateMachine>().IsDashing && player.gameObject.GetComponent<PlayerStateMachine>().DashUnlocked)
             {
                 player.gameObject.GetComponent<PlayerStateMachine>().CurrentDashMeter += 1;
-                Debug.Log("dash meter is: " + player.gameObject.GetComponent<PlayerStateMachine>().CurrentDashMeter);
+                player.gameObject.GetComponent<PlayerStateMachine>().UpdateDashText();
             }
             
         }

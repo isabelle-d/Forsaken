@@ -8,6 +8,7 @@ public class PlayerDashState : State
         playerContext = currentContext;
         isBaseState = true;
         InitializeSubStates();
+        playerContext.NumHits = 0;
     }
     public override void InitializeSubStates()
     {

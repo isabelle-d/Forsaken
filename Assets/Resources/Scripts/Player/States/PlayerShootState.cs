@@ -14,6 +14,7 @@ public class PlayerShootState : State
         playerContext.AppliedMovementX = 0f;
         playerContext.AppliedMovementY = 0f;
         playerContext.IsShootPressed = false;  // Reset to prevent continuous shooting
+        playerContext.NumHits = 0;
 
     }
     public override void UpdateState()

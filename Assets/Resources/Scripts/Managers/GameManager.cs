@@ -48,8 +48,9 @@ public class GameManager : MonoBehaviour
     //insert some way to transition here
     public void BeginNextStage()
     {
-        cutsceneManager.PlayCutScene(2);
+        
         currentStage += 1;
+        cutsceneManager.PlayCutScene(currentStage);
         Debug.Log("entering next stage");
         IsTransitioning = true;
         bossStateMachine.Health = 100;

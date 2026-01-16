@@ -17,6 +17,7 @@ public class PlayerJumpState : State
         playerContext.AppliedMovementX = 0f;
         playerContext.AppliedMovementY = 0f;
         playerContext.IsJumpPressed = false; 
+        playerContext.NumHits = 0;
     }
     public override void UpdateState()
     {
