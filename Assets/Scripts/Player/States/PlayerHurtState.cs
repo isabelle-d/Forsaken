@@ -20,6 +20,7 @@ public class PlayerHurtState : State
     }
     public override void ExitState()
     {
+        playerContext.Anim.ResetTrigger("hurt");
         playerContext.IsHurt = false;
         playerContext.CanMove = true;
     }

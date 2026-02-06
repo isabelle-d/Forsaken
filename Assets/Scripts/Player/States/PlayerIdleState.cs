@@ -21,6 +21,7 @@ public class PlayerIdleState : State
     }
     public override void ExitState()
     {
+        playerContext.Anim.ResetTrigger("idle");
     }
 
     public override void CheckSwitchStates()

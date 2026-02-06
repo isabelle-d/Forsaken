@@ -22,6 +22,7 @@ public class PlayerRunState : State
     }
     public override void ExitState()
     {
+        playerContext.Anim.ResetTrigger("run");
     }
 
     public override void CheckSwitchStates()

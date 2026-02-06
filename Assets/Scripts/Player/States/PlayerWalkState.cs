@@ -10,6 +10,7 @@ public class PlayerWalkState : State
     }
     public override void EnterState()
     {
+        Debug.Log("triggering walk");
         playerContext.CanMove = true;
         playerContext.Anim.SetTrigger("walk");
         playerContext.AppliedMovementX = playerContext.CurrentMovementInput.x * playerContext.MoveSpeed;

@@ -25,6 +25,7 @@ public abstract class State
    }
    public void SwitchState(State newState)
    {
+      currentSubState?.ExitState();
       ExitState();
       newState.EnterStates();
       if (isBaseState)
