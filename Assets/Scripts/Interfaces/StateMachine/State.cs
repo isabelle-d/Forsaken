@@ -15,19 +15,13 @@ public abstract class State
    public void UpdateStates()
    {
       UpdateState();
-      if (currentSubState != null)
-      {
-         currentSubState.UpdateStates();
-      }
+      currentSubState?.UpdateStates();
    }
 
    public void EnterStates()
    {
       EnterState();
-      if (currentSubState != null)
-      {
-         currentSubState.EnterStates();
-      }
+      currentSubState?.EnterStates();
    }
    public void SwitchState(State newState)
    {

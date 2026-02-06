@@ -16,7 +16,7 @@ public class PlayerDashAttackState : State
         endGoal = playerContext.Player.transform.position + direction * playerContext.DashDistance;
         Physics2D.IgnoreLayerCollision(6, 7, true);
         Physics2D.IgnoreLayerCollision(6, 8, true);
-        playerContext.Anim.Play("Dash");
+        playerContext.Anim.SetTrigger("dash");
         playerContext.DashTrail.GetComponent<DashTrail>().enabled = true;
         playerContext.DashTrail.GetComponent<DashTrail>().IsDrawingTrail = true;
         playerContext.DashTrail.GetComponent<DashTrail>().Direction = new Vector3(Mathf.Sign(direction.x), 0, 0);

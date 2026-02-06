@@ -10,7 +10,7 @@ public class PlayerHurtState : State
     public override void EnterState()
     {
         playerContext.CanMove = false;
-        playerContext.Anim.Play("Hurt");
+        playerContext.Anim.SetTrigger("hurt");
         playerContext.AppliedMovementX = 0f;
         playerContext.AppliedMovementY = 0f;
     }

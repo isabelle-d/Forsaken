@@ -10,7 +10,7 @@ public class PlayerRunState : State
     public override void EnterState()
     {
         playerContext.CanMove = true;
-        playerContext.Anim.Play("Run");
+        playerContext.Anim.SetTrigger("run");
         playerContext.AppliedMovementX = playerContext.CurrentMovementInput.x * playerContext.RunSpeed;
         
     }
